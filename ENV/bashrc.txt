@@ -1,0 +1,106 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+PATH=$PATH:/test
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+ 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+#
+# Sfecific Configuration
+#
+#export PS1='[\u@\h \w]\$ '
+export PS1='\[\e[31;1m\][\u@\h\[\e[33;1m\] \w\[\e[31;1m\]]\$ \[\e[m\]'
+alias ls='ls --color=auto -hF'
+alias pps='ps -ef | head -1; ps -ef | grep $1'
+alias vi='/usr/bin/vim'
+alias tree='env LANG=C tree -C -F'
+alias df='df -hT'
+alias cls='clear'
+
+#source ~/.local/share/blesh/ble.sh
+alias chrom='/usr/bin/google-chrome --no-sandbox'
+#
+# rsync Alias
+#
+alias RS='rsync -az --delete -e ssh'    # RS /backup/ main:/backup/server1
+alias LS='rsync -a --delete'            # LS /backup/ /test100
+
+
+#
+# Firewall Alias
+#
+alias fwcmd='firewall-cmd'
+alias fwadd='firewall-cmd --permanent'
+alias fwreload='firewall-cmd --reload'
+alias fwlist='firewall-cmd --list-all'
+
+
+#
+# Firewall Alias
+#
+alias fwcmd='firewall-cmd'
+alias fwadd='firewall-cmd --permanent'
+alias fwreload='firewall-cmd --reload'
+alias fwlist='firewall-cmd --list-all'
+
+
+#
+# DNS Server Alias
+#
+alias named.conf='vi /etc/named.conf'
+alias named.rfc1912.zones='vi /etc/named.rfc1912.zones' 
+alias DNS='cd /var/named'
+alias dnslog='tail -f /var/log/messages'
+
+#
+# DNS Server Alias
+#
+alias named.conf='vi /etc/named.conf'
+alias named.rfc1912.zones='vi /etc/named.rfc1912.zones' 
+alias DNS='cd /var/named'
+alias dnslog='tail -f /var/log/messages'
+#
+# FTP Server Alias
+#
+alias aaa='systemctl restart vsftpd'
+alias bbb='ftp localhost'
+
+#
+# Mail Server Alias
+#
+alias MAIL='cd /etc/postfix'
+alias main.cf='vi /etc/postfix/main.cf'
+alias maillog='tail -f /var/log/maillog'
+
+
+#
+# Samba Server Alias
+#
+alias smb.conf='vi /etc/samba/smb.conf'
+alias SMB='cd /etc/samba'
+alias smblog='tail -f /var/log/samba/log.smbd'
+alias nmblog='tail -f /var/log/samba/log.nmbd'
+
+#
+# Samba Server Alias
+#
+alias smb.conf='vi /etc/samba/smb.conf'
+alias SMB='cd /etc/samba'
+alias smblog='tail -f /var/log/samba/log.smbd'
+alias nmblog='tail -f /var/log/samba/log.nmbd'

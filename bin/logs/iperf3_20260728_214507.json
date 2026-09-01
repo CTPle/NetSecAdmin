@@ -1,0 +1,11 @@
+{
+	"start":	{
+		"connected":	[],
+		"version":	"iperf 3.21",
+		"system_info":	"Linux server1.example.com 6.12.0-248.el10.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Jul  8 15:01:26 UTC 2026 x86_64"
+	},
+	"intervals":	[],
+	"end":	{
+	},
+	"error":	"unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: Connection refused"
+}
